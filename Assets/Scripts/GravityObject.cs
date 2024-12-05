@@ -20,23 +20,8 @@ public class GravityObject : MonoBehaviour
         // Hämta Rigidbody2D-komponenten
         Rigidbody2D = GetComponent<Rigidbody2D>();
 
-        if (Rigidbody2D == null)
-        {
-            Debug.LogError("Rigidbody2D saknas på " + gameObject.name);
-        }
     }
 
-    void OnEnable()
-    {
-        // Lägg till objektet i listan när det aktiveras
-        gravityObjects.Add(this);
-    }
-
-    void OnDisable()
-    {
-        // Ta bort objektet från listan när det inaktiveras
-        gravityObjects.Remove(this);
-    }
 
     void FixedUpdate()
     {

@@ -303,9 +303,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e91a33ee85d504dbdae0ea81bc5fd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  staticFriction: 0.5
-  kineticFriction: 0.2
-  gravityConstant: 9.8
 --- !u!1 &96863968
 GameObject:
   m_ObjectHideFlags: 0
@@ -1749,6 +1746,7 @@ GameObject:
   - component: {fileID: 1177120885}
   - component: {fileID: 1177120888}
   - component: {fileID: 1177120889}
+  - component: {fileID: 1177120890}
   m_Layer: 0
   m_Name: Monstr
   m_TagString: monstr
@@ -1856,6 +1854,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PushForce: {x: 0, y: 0}
   JumpForce: {x: 0, y: 0}
+  PhysicsEngine: {fileID: 0}
+  FrictionEngine: {fileID: 0}
+  OnGround: 0
 --- !u!61 &1177120886
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1953,6 +1954,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 761b5e42613e1c442bbc87abdf7ff870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1177120890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177120881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f841763fd74a884080d231c6d0ad1c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StaticFriction: 1
+  KineticFriction: 0.5
 --- !u!1 &1244526872
 GameObject:
   m_ObjectHideFlags: 0

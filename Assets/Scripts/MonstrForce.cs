@@ -2,61 +2,65 @@ using UnityEngine;
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
-    public Vector2 PushForce; // Kraft appliceras kontinuerligt för att flytta /röra sig
+    public Vector2 PushForce; // Kraft som appliceras kontinuerligt för att flytta objektet åt höger
+    public Vector2 JumpForce; // Kraft som appliceras vid hopp
 
-    public Vector2 JumpForce; // Kraft som appliceras när yumping
+    public Rigidbody2D PhysicsEngine; // Referens till Rigidbody2D-komponenten
+    public Friction FrictionEngine; // Referens till Friction-komponenten
+    public bool OnGround = false; // Är objektet på marken?
 
-    Vector2 Velocity;
-
-    Rigidbody2D PhysicsEngine;
-
-    bool OnGround = false; //Kontrollera om Monstr är on the ground
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // Start anropas en gång innan den första uppdateringsramen
     void Start()
-    { 
-        //Hämtar en referens till spelobjektets Rigidbody2D-komponent
-        PhysicsEngine = GetComponent<Rigidbody2D>();
+    {
+        // Hämtar Rigidbody2D-komponenten om den inte har angetts i Inspector
+        if (PhysicsEngine == null)
+            PhysicsEngine = GetComponent<Rigidbody2D>();
+
+        // Hämtar Friction-komponenten om den inte har angetts i Inspector
+        if (FrictionEngine == null)
+            FrictionEngine = GetComponent<Friction>();
     }
 
-    // Update is called once per frame
+    // Update anropas en gång per bildruta
     void Update()
     {
-        //Utsätter Monstr för en kontinuerlig "push-kraft" rakt till höger
-        PhysicsEngine.AddForce(PushForce);
-
-     if (Input.GetKeyDown(KeyCode.Space) && OnGround)
+        if (OnGround)
         {
-            //Utsätter Monstr för en impulskraft rakt uppåt. 
-            //Hoppa impuls
+            // Applicerar PushForce med hjälp av Friction-komponenten
+            FrictionEngine.ApplyForce(PushForce);
+        }
+
+        // Hoppfunktion
+        if (Input.GetKeyDown(KeyCode.Space) && OnGround)
+        {
+            // Applicerar impuls för hopp
             PhysicsEngine.AddForce(JumpForce, ForceMode2D.Impulse);
-            OnGround = false;  // Nu är Monstr i luften
-        }     
+            OnGround = false; // Objektet är nu i luften
+        }
     }
 
-    //Anropas av spelmotorn när i detta fall Monstrs collider kör in i ett annat spelobjekts collid
+    // Anropas när objektets collider träffar ett annat objekt
     private void OnCollisionEnter2D(Collision2D c)
     {
-        //if -satsen blir true om spelobjektet som hänger ihop med den collider vi krockat med heter "background"
         if (c.gameObject.name == "background")
         {
-            OnGround = true;
+            OnGround = true; // Objektet är nu på marken
         }
-        //Debug.Log("Landade");
     }
 
-    //Denna metod kallas när objektet kommer ut ur kollision
+    // Anropas när objektets collider lämnar ett annat objekt
     private void OnCollisionExit2D(Collision2D c)
     {
-    if (c.gameObject.name == "background")
-            {
-                OnGround = false;
-            }
+        if (c.gameObject.name == "background")
+        {
+            OnGround = false; // Objektet är inte längre på marken
+        }
     }
-    // Denna metod anropas när triggerkollideren träffas
+
+    // Anropas när ett trigger-kollisionsområde träffas
     private void OnTriggerEnter2D(Collider2D c)
     {
-         Debug.Log("I MÅL");
+        Debug.Log("I MÅL");
     }
 }
 
