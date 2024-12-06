@@ -64,4 +64,12 @@ public class NPCHero : MonoBehaviour
         transform.Translate(Velocity * Time.deltaTime); 
 
     }
+
+    void OnCollisionEnter2D(Collision2D collision) // Hantera kollision med Monstr
+    {
+        if (collision.gameObject.CompareTag("monstr"))
+        {
+            Debug.Log("Hero kolliderade med Monstr!");
+        }
+    }
 }

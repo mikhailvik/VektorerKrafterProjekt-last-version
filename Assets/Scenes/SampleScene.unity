@@ -132,7 +132,6 @@ GameObject:
   - component: {fileID: 20958994}
   - component: {fileID: 20959000}
   - component: {fileID: 20959001}
-  - component: {fileID: 20959002}
   m_Layer: 0
   m_Name: Venus
   m_TagString: Untagged
@@ -240,7 +239,7 @@ Transform:
   m_GameObject: {fileID: 20958993}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.23672451, w: -0.9715768}
-  m_LocalPosition: {x: -2.69, y: 2.19, z: 0}
+  m_LocalPosition: {x: -0.92, y: 2.32, z: 0}
   m_LocalScale: {x: 0.25658605, y: 0.27072152, z: 0.22366287}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -291,18 +290,6 @@ MonoBehaviour:
   - {fileID: 285259499}
   - {fileID: 1776248599}
   - {fileID: 1966465311}
---- !u!114 &20959002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 20958993}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25e91a33ee85d504dbdae0ea81bc5fd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &96863968
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,6 +302,7 @@ GameObject:
   - component: {fileID: 96863970}
   - component: {fileID: 96863969}
   - component: {fileID: 96863972}
+  - component: {fileID: 96863973}
   m_Layer: 0
   m_Name: Hero
   m_TagString: hero
@@ -434,7 +422,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -450,6 +438,33 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 4, y: 6}
   m_EdgeRadius: 0
+--- !u!50 &96863973
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96863968}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 50
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &285259493
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,7 +779,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 493985931}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1161,7 +1176,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 766292531}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1336,7 +1351,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 935806195}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1711,7 +1726,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1153725514}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1911,7 +1926,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177120881}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2111,7 +2126,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1244526872}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2286,7 +2301,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1705636867}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2461,7 +2476,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1757730100}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2564,7 +2579,7 @@ Transform:
   m_GameObject: {fileID: 1776248593}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.76, y: 1.99, z: 0}
+  m_LocalPosition: {x: 4.11, y: 1.99, z: 0}
   m_LocalScale: {x: 0.21234527, y: 0.19922984, z: 0.76135}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2807,7 +2822,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855125029}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2846,7 +2861,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1966465305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2951,7 +2966,7 @@ Transform:
   m_GameObject: {fileID: 1966465304}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.13, y: 1.9, z: -1.3407}
+  m_LocalPosition: {x: -1.99, y: 2.12, z: -1.3407}
   m_LocalScale: {x: 0.79979223, y: 0.31715894, z: 0.5515808}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3154,7 +3169,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2035334464}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -3329,7 +3344,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2050081420}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

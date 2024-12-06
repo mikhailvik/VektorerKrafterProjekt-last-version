@@ -54,4 +54,12 @@ public class MonstrControl : MonoBehaviour
             Speed.y = 0;   
         }
     }
+    
+    void OnCollisionEnter2D(Collision2D collision) // Hantera kollision med Hero
+{
+    if (collision.gameObject.CompareTag("hero"))
+    {
+        Debug.Log("Monstr kolliderade med Hero!");
+    }
+}
 }
